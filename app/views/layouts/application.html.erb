@@ -8,11 +8,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <div class="flash_message">
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key} bg-success") %>
-    <% end %>
-  </div>
   <body>
     <div class='body_wrapper'>
       <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -22,8 +17,8 @@
           </div>
           <% if logged_in? %>  
             <ul class="nav navbar-nav">
-              <li><%= link_to "投稿一覧", users_path %></li>
-              <li><%= link_to "投稿", new_user_path %></li>
+              <li><%= link_to "投稿一覧", blogs_path %></li>
+              <li><%= link_to "投稿", new_blog_path %></li>
               <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
