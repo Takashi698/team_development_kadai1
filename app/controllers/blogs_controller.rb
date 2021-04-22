@@ -38,7 +38,7 @@ class BlogsController < ApplicationController
     if params[:back]
       render :edit
     else
-      if @blog.update(post_params)
+      if @blog.update(blog_params)
         redirect_to blogs_path, notice: "ささやきを編集しました！"
       else
         render :edit
